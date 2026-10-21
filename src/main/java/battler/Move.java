@@ -11,15 +11,15 @@ getters - no setters becuase moves arent assigning or changing
 public class Move {
 
     private final String name;
-    private final String type;
+    private final ElementType type;
     private final int power;
     private final int accuracy;
 
-    public Move(String name, String type, int power, int accuracy) {
+    public Move(String name, ElementType type, int power, int accuracy) {
         if (name == null || name.isEmpty()) {
             throw new IllegalArgumentException("move needs name");
         }
-        if (type == null || type.isEmpty()) {
+        if (type == null) {
             throw new IllegalArgumentException("move needs type");
         }
         if (power < 0) {
@@ -47,7 +47,7 @@ public class Move {
     /**
      * Returns the type of the move
      */
-    public String getType() {
+    public ElementType getType() {
         return type;
     }
     /**
